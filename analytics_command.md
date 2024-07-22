@@ -54,5 +54,21 @@ FROM
   `CenterStats`
 ORDER BY
   percentage650to720 DESC ;
+```
 
+
+Student with rank 
+```sql
+SELECT 
+    centerNumber,
+    serialNumber,
+    Marks,
+    centerName,
+    centerCity,
+    centerState,
+    RANK() OVER (ORDER BY Marks DESC) AS Rank
+FROM `centering-sweep-430016-c4.neet.info`
+    
+ORDER BY 
+    Marks DESC;
 ```
